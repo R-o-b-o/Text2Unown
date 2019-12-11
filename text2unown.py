@@ -17,7 +17,7 @@ def text2unown(text, unownFilepath, outFilepath, scale):
             textImage.paste(charImage, (offset, textImage.size[1] - charImage.size[1]))
             offset += charImage.size[0]
 
-    textImage.thumbnail((textImage.size[0] * scale, textImage.size[1] * scale))
+    textImage = textImage.resize((int(textImage.size[0] * scale), int(textImage.size[1] * scale)))
     textImage.save(outFilepath)
 
 
